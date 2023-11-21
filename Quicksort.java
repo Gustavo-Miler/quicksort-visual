@@ -14,7 +14,7 @@ public class Quicksort {
         printArray(list);
     }
 
-    private static void quicksort(int[] array) {
+    public static void quicksort(int[] array) {
         quicksort(array, 0, array.length - 1);
     }
     private static void quicksort(int[] array, int lowIndex, int highIndex) {
@@ -30,7 +30,7 @@ public class Quicksort {
         quicksort(array, leftPointer + 1, highIndex);
     }
 
-    private static int partition(int[] array, int lowIndex, int highIndex, int pivot) {
+    public static int partition(int[] array, int lowIndex, int highIndex, int pivot) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
 
@@ -44,6 +44,12 @@ public class Quicksort {
             }
 
             swap(array, leftPointer, rightPointer);
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
 
         swap(array, leftPointer, highIndex);
